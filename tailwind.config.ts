@@ -14,6 +14,9 @@ export default {
         accent: '#ffd700',
         background: '#f5f5f5',
       },
+      animation: {
+        'in': 'fade-in-up 0.7s ease-out forwards',
+      },
       keyframes: {
         'fade-in-up': {
           '0%': {
@@ -23,11 +26,8 @@ export default {
           '100%': {
             opacity: '1',
             transform: 'translateY(0)'
-          },
+          }
         }
-      },
-      animation: {
-        'in': 'fade-in-up 0.7s ease-out forwards',
       }
     },
   },

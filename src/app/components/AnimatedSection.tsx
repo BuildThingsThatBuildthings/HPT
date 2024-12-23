@@ -1,13 +1,8 @@
 'use client'
 
-import { useEffect, useRef, ReactNode } from 'react'
+import { useEffect, useRef } from 'react'
 
-interface AnimatedSectionProps {
-  children: ReactNode
-  className?: string
-}
-
-export default function AnimatedSection({ children, className = '' }: AnimatedSectionProps) {
+export default function AnimatedSection({ children }: { children: React.ReactNode }) {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -37,10 +32,7 @@ export default function AnimatedSection({ children, className = '' }: AnimatedSe
   }, [])
 
   return (
-    <div
-      ref={sectionRef}
-      className={`opacity-0 translate-y-8 transition-all duration-700 ${className}`}
-    >
+    <div ref={sectionRef} className="opacity-0">
       {children}
     </div>
   )
