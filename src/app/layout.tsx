@@ -1,13 +1,15 @@
-import './globals.css'
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import './globals.css'
 import Navigation from './components/Navigation'
-import Footer from './components/Footer'
 import FloatingCTA from './components/FloatingCTA'
-import { metadata } from './metadata'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export { metadata }
+export const metadata: Metadata = {
+  title: 'Hershey Personal Training',
+  description: 'Transform your life with personalized fitness training',
+}
 
 export default function RootLayout({
   children,
@@ -15,13 +17,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${inter.className} bg-background min-h-screen flex flex-col overflow-x-hidden`} suppressHydrationWarning>
+    <html lang="en">
+      <body className={inter.className} suppressHydrationWarning>
         <Navigation />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <main>{children}</main>
         <FloatingCTA />
       </body>
     </html>

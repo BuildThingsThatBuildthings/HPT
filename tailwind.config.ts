@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,21 +15,17 @@ export default {
         background: '#f5f5f5',
       },
       animation: {
-        'in': 'fade-in-up 0.7s ease-out forwards',
+        'fade-in': 'fadeIn 0.5s ease-in',
       },
       keyframes: {
-        'fade-in-up': {
-          '0%': {
-            opacity: '0',
-            transform: 'translateY(20px)'
-          },
-          '100%': {
-            opacity: '1',
-            transform: 'translateY(0)'
-          }
-        }
-      }
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
     },
   },
   plugins: [],
-} satisfies Config;
+};
+
+export default config;
