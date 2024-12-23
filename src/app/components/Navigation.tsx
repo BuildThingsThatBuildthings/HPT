@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -11,7 +12,7 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <Image
                 src="https://storage.googleapis.com/msgsndr/4I1M5n89grUjOuxzR5Dx/media/676947e70bcca05b0b805740.png"
                 alt="Hershey Personal Training Logo"
@@ -20,7 +21,7 @@ export default function Navigation() {
                 className="h-10 w-auto"
                 priority
               />
-            </a>
+            </Link>
           </div>
           
           {/* Mobile menu button */}
@@ -44,22 +45,22 @@ export default function Navigation() {
 
           {/* Desktop menu */}
           <div className="hidden md:flex md:items-center md:space-x-8">
-            <a href="/" className="hover:text-accent transition-colors">Home</a>
-            <a href="/about" className="hover:text-accent transition-colors">About</a>
-            <a href="/services" className="hover:text-accent transition-colors">Services</a>
-            <a href="/testimonials" className="hover:text-accent transition-colors">Testimonials</a>
-            <a href="/contact" className="hover:text-accent transition-colors">Contact</a>
+            <Link href="/" className="hover:text-accent transition-colors">Home</Link>
+            <Link href="/about" className="hover:text-accent transition-colors">About</Link>
+            <Link href="/services" className="hover:text-accent transition-colors">Services</Link>
+            <Link href="/testimonials" className="hover:text-accent transition-colors">Testimonials</Link>
+            <Link href="/contact" className="hover:text-accent transition-colors">Contact</Link>
           </div>
         </div>
 
         {/* Mobile menu */}
         <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden absolute left-0 right-0 bg-primary px-2 pt-2 pb-3 shadow-lg`}>
           <div className="space-y-1">
-            <a href="/" className="block px-3 py-2 rounded-md text-white hover:text-accent transition-colors">Home</a>
-            <a href="/about" className="block px-3 py-2 rounded-md text-white hover:text-accent transition-colors">About</a>
-            <a href="/services" className="block px-3 py-2 rounded-md text-white hover:text-accent transition-colors">Services</a>
-            <a href="/testimonials" className="block px-3 py-2 rounded-md text-white hover:text-accent transition-colors">Testimonials</a>
-            <a href="/contact" className="block px-3 py-2 rounded-md text-white hover:text-accent transition-colors">Contact</a>
+            <Link href="/" className="block px-3 py-2 rounded-md text-white hover:text-accent transition-colors">Home</Link>
+            <Link href="/about" className="block px-3 py-2 rounded-md text-white hover:text-accent transition-colors">About</Link>
+            <Link href="/services" className="block px-3 py-2 rounded-md text-white hover:text-accent transition-colors">Services</Link>
+            <Link href="/testimonials" className="block px-3 py-2 rounded-md text-white hover:text-accent transition-colors">Testimonials</Link>
+            <Link href="/contact" className="block px-3 py-2 rounded-md text-white hover:text-accent transition-colors">Contact</Link>
           </div>
         </div>
       </nav>
